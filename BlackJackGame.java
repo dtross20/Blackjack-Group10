@@ -1,45 +1,61 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class BlackJackGame extends World {
-    private Player player;
-    private Dealer dealer;
-
-    public BlackJackGame() {
-        super(1100, 800, 1);
-        player = new Player(); 
-        dealer = new Dealer();
-        addObject(player, 300, 200);
-        addObject(dealer, 300, 350); 
+/**
+ * Write a description of class BlackJackGame here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class BlackjackGame extends CardGame
+{
+    private BlackjackHand[] hands;
+    private BlackjackHand dealer;
+    int numberOfHands;
+    
+    public BlackjackGame(int numberOfDecks, int maxNumberOfHands)
+    {
+        super(numberOfDecks);    
+        hands = new BlackjackHand[maxNumberOfHands];
+        dealer = new BlackjackHand("Dealer");
+        numberOfHands = 0;
     }
-
-    public void act() {
-        checkEndGameConditions();
-    }
-
-    private void checkEndGameConditions() {
-        // Check if player busts
-        if (playerBusts()) {
-            Greenfoot.setWorld(new EndScreen("You busted with a score of " + player.getScore(), false));
-        }
-        // Check if player wins
-        else if (playerWins()) { 
-            Greenfoot.setWorld(new EndScreen("Congratulations! You win with a score of " + player.getScore(), false));
-        } 
-        // Check if player loses
-        else if (playerLoses()) {
-            Greenfoot.setWorld(new EndScreen("You lost with a score of " + player.getScore() + ", dealer had " + dealer.getHandValue(), true));
+    
+    public void join(String name)
+    {
+        if (numberOfHands < hands.length){
+            hands[numberOfHands] = new BlackjackHand(name);
+            numberOfHands++;
         }
     }
-
-    private boolean playerBusts() {
-        return player.getHandValue() > 21;
+    
+    public void leave(String name)
+    {
+        boolean isFound = true;
+        for(int index=0; index < numberOfHands; index++){
+            if (!isFound){
+                if (hands[index].getName().equals(name)){
+                    isFound = true;
+                } 
+            } else {
+                hands[index-1] = hands[index];
+            }
+        }
+        if (isFound) {
+            numberOfHands--;
+            hands[numberOfHands] = null;
+        }
     }
-
-    private boolean playerWins() {
-        return player.getHandValue() > dealer.getHandValue() && dealer.getHandValue() <= 21;
+    
+    public void deal(){
+        // Implement your code here
     }
-
-    private boolean playerLoses() {
-        return player.getHandValue() < dealer.getHandValue() && dealer.getHandValue() <= 21;
+    
+    /**
+     * Act - do whatever the BlackJackGame wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act()
+    {
+        // Add your action code here.
     }
 }
