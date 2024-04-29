@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Deal
+comment0.text=\n\ Write\ a\ description\ of\ class\ Deal\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ Deal\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment2.params=deck
+comment2.target=Deal(Deck)
+comment3.params=players\ cardsPerHand
+comment3.target=void\ deal(Hand[],\ int)
+comment3.text=\n\ Deals\ a\ specified\ number\ of\ cards\ to\ each\ hand\ in\ the\ array\ of\ players.\n\ @param\ players\ Array\ of\ Hand,\ each\ representing\ a\ player's\ hand.\n\ @param\ cardsPerHand\ Number\ of\ cards\ to\ deal\ to\ each\ player.\n
+numComments=4
