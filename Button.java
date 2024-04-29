@@ -16,6 +16,7 @@ public class Button extends Actor
     
     public boolean isPressed()
     {
+        boolean isPressed = this.isPressed;
         return isPressed;
     }
     
@@ -23,13 +24,6 @@ public class Button extends Actor
     {
         isPressed = false;
     }
-    
-    public void BackPressed()
-    {
-        isPressed = false;
-        
-    }
-    
     
     /**
      * Act - do whatever the Hit wants to do. This method is called whenever

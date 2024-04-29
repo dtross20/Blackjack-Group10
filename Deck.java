@@ -42,8 +42,8 @@ public class Deck extends Actor
         for(int index = 0; index < numOfCards-1; index++){
             int swapIndex = rand.nextInt(numOfCards-index) + index;
             Card temp = cards.get(index);
-            cards.set(index, cards.get(swapIndex));
-            cards.set(swapIndex, temp);
+            cards.add(index, cards.get(swapIndex));
+            cards.add(swapIndex, temp);
         }
     }
 
@@ -154,6 +154,6 @@ public class Deck extends Actor
      */
     public void act()
     {
-        // Add your action code here. fic
+        // Add your action code here.
     }
 }
