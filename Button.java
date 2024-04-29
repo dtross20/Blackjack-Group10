@@ -8,14 +8,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Button extends Actor
 {
+    private boolean isPressed;
+    
+    public Button(){
+        isPressed = false;
+    }
+    
+    public boolean isPressed()
+    {
+        boolean isPressed = this.isPressed;
+        return isPressed;
+    }
+    
+    public void reset() 
+    {
+        isPressed = false;
+    }
+    
     /**
-     * Act - do whatever \ the Button wants to do. This method is called whenever
+     * Act - do whatever the Hit wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        public Button(String text);
-        setImage(new GreenfootImage(text, 24, Color.WHITE, Color.BLACK));
+        if(Greenfoot.mouseClicked(this)){
+            isPressed = true;
+        }
     }
 }
-

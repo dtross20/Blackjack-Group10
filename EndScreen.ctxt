@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.target=EndScreen
-comment0.text=\n\ EndScreen\ class\ to\ display\ game\ results.\n
-comment1.params=message\ slimed
-comment1.target=EndScreen(java.lang.String,\ boolean)
-comment2.params=message\ slimed
-comment2.target=void\ prepare(java.lang.String,\ boolean)
-numComments=3
+comment1.params=points\ slimed
+comment1.target=EndScreen(int,\ boolean)
+comment2.params=points\ slimed
+comment2.target=void\ prepare(int,\ boolean)
+comment3.params=
+comment3.target=void\ showOptions()
+comment4.params=
+comment4.target=void\ act()
+numComments=5
